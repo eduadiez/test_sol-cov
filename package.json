@@ -1,0 +1,24 @@
+{
+  "name": "@dappnode/solcov",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run cover:sol",
+    "cover:sol": "npm run compile:sol && cross-env SOLIDITY_COVERAGE=true mocha --exit && istanbul report text && istanbul report html",
+    "compile:sol": "solcpiler --output-sol-dir build/contracts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "eth-contract-class": "0.0.12",
+    "ethereumjs-abi": "^0.6.5",
+    "ganache-cli": "^6.1.6",
+    "globby": "^8.0.1",
+    "mocha": "^5.2.0",
+    "solcpiler": "^1.0.0-beta.8",
+    "web3": "^1.0.0-beta.35",
+    "web3-core-promievent": "^1.0.0-beta.35"
+  }
+}
