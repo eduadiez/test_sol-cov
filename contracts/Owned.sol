@@ -50,7 +50,7 @@ contract Owned {
 
         address oldOwner = owner;
         owner = newOwnerCandidate;
-        newOwnerCandidate = 0x1;
+        newOwnerCandidate = 0x0;
 
         emit OwnershipTransferred(oldOwner, owner);
     }

@@ -57,7 +57,7 @@ describe('Owned', function() {
 
         result = await owned.acceptOwnership({ from: owner2, gas: 4200000 });
 
-        assert.equal(await owned.newOwnerCandidate(), '0x0000000000000000000000000000000000000001');
+        assert.equal(await owned.newOwnerCandidate(), '0x0000000000000000000000000000000000000000');
         assert.equal(await owned.owner(), owner2);
 
         assert.hasAllKeys(result.events, "OwnershipTransferred");
@@ -75,7 +75,7 @@ describe('Owned', function() {
 
     it("ownership can be removed", async () => {
         const result = await owned.removeOwnership('0xdAc0000000000000000000000000000000000000', { from: owner1, gas: 4200000 });
-        assert.equal(await owned.owner(), '0x0000000000000000000000000000000000000001');
+        assert.equal(await owned.owner(), '0x0000000000000000000000000000000000000000');
         assert.hasAllKeys(result.events, "OwnershipRemoved");
 
     });
